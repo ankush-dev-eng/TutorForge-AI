@@ -1,0 +1,195 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--text-primary);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-soft: var(--terracotta-soft);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --color-mastered: var(--mastered);
+  --color-mastered-soft: var(--mastered-soft);
+  --color-mastered-border: var(--mastered-border);
+  --color-mastered-text: var(--mastered-text);
+
+  --color-developing: var(--developing);
+  --color-developing-soft: var(--developing-soft);
+  --color-developing-border: var(--developing-border);
+  --color-developing-text: var(--developing-text);
+
+  --color-needs-review: var(--needs-review);
+  --color-needs-review-soft: var(--needs-review-soft);
+  --color-needs-review-border: var(--needs-review-border);
+  --color-needs-review-text: var(--needs-review-text);
+
+  --color-not-started: var(--not-started);
+  --color-not-started-soft: var(--not-started-soft);
+  --color-not-started-border: var(--not-started-border);
+  --color-not-started-text: var(--not-started-text);
+  
+  --color-sidebar: var(--sidebar-bg);
+  --color-sidebar-active: var(--sidebar-active);
+
+  --color-primary: var(--accent);
+  --color-primary-foreground: var(--background);
+  --color-secondary: var(--surface-2);
+  --color-secondary-foreground: var(--text-primary);
+  --color-muted: var(--surface-3);
+  --color-muted-foreground: var(--text-muted);
+  --color-destructive: var(--danger);
+  
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text-primary);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text-primary);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-heading);
+}
+
+:root {
+  --background: #F2EFE8;
+  --surface: #FFFDF8;
+  --surface-2: #E8E6DF;
+  --surface-3: #FFFFFF;
+  --text-primary: #17191B;
+  --text-secondary: #5D6468;
+  --text-muted: #858B8D;
+  --border: #D4D0C7;
+  --border-strong: #BDB8AD;
+  
+  /* Petrol Brand */
+  --accent: #2D5568;
+  --accent-hover: #234655;
+  --accent-soft: #DCE7EB;
+  
+  /* Brand Extended */
+  --terracotta: #A65E4B;
+  --terracotta-soft: #F0DDD7;
+  --sage: #657E68;
+  --sage-soft: #DCE6DD;
+  --brass: #A7864F;
+  --brass-soft: #EEE5D2;
+
+  --success: #4E735A;
+  --warning: #A97638;
+  --danger: #9A4F48;
+
+  --mastered: #47745A;
+  --mastered-soft: #E3EEE6;
+  --mastered-border: #70957D;
+  --mastered-text: #31543F;
+
+  --developing: #3E6F82;
+  --developing-soft: #E3EBEF;
+  --developing-border: #6D93A2;
+  --developing-text: #2D5363;
+
+  --needs-review: #A95F4C;
+  --needs-review-soft: #F1E1DC;
+  --needs-review-border: #C18473;
+  --needs-review-text: #784337;
+
+  --not-started: #72797C;
+  --not-started-soft: #E8E9E8;
+  --not-started-border: #A7ABAD;
+  --not-started-text: #555B5D;
+  
+  --sidebar-bg: #EAE7DF;
+  --sidebar-active: #DDE7EA;
+}
+
+.dark {
+  --background: #0E1113;
+  --surface: #15191C;
+  --surface-2: #20262A;
+  --surface-3: #1B2024;
+  --text-primary: #F2EEE7;
+  --text-secondary: #B5B5AE;
+  --text-muted: #7E8586;
+  --border: #30363A;
+  --border-strong: #41484D;
+  
+  /* Petrol Brand */
+  --accent: #89AFC0;
+  --accent-hover: #A5C4D1;
+  --accent-soft: #1D2A30;
+  
+  /* Brand Extended */
+  --terracotta: #C07A67;
+  --terracotta-soft: #32231F;
+  --sage: #87A08A;
+  --sage-soft: #202B24;
+  --brass: #BDA56E;
+  --brass-soft: #332D20;
+
+  --success: #7FA188;
+  --warning: #C29B60;
+  --danger: #C5796F;
+
+  --mastered: #8AB59A;
+  --mastered-soft: #1D3026;
+  --mastered-border: #557D63;
+  --mastered-text: #B8D2C0;
+
+  --developing: #8FB6C7;
+  --developing-soft: #1B2B32;
+  --developing-border: #537D8D;
+  --developing-text: #B7D0DA;
+
+  --needs-review: #C7816E;
+  --needs-review-soft: #34231F;
+  --needs-review-border: #865244;
+  --needs-review-text: #D9A090;
+
+  --not-started: #90989B;
+  --not-started-soft: #22272A;
+  --not-started-border: #555D61;
+  --not-started-text: #B2B8BA;
+
+  --sidebar-bg: #15191C;
+  --sidebar-active: #202B30;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-accent/50;
+  }
+  body {
+    @apply bg-background text-text-primary min-h-screen relative overflow-x-hidden;
+    /* transition: background-color 0.3s ease, color 0.3s ease; */
+  }
+  html {
+    @apply font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
