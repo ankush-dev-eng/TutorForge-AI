@@ -1,0 +1,96 @@
+{
+  "ids": [
+    "11d9c814-7a98-4167-af95-32ff64435fbe",
+    "14ff66cc-f187-487b-92a6-15d29beb7139",
+    "09227c0c-bfd9-415d-bebb-25708725fee9",
+    "7a6f0cb4-3e24-4780-84a4-d1f9b3a8b378",
+    "1468feed-d098-4ec3-a4a4-91ebfe79bc98",
+    "28d53489-12b7-411e-a63d-f9334b40a63a",
+    "0874e5dd-6091-4a38-a86d-80f6fb782305",
+    "4b0f7286-b374-442a-a69b-e44441f72798"
+  ],
+  "texts": [
+    "TCP congestion control is implemented through four interrelated algorithms: Slow Start, Congestion Avoidance, Fast Retransmit, and Fast Recovery. The congestion window (cwnd) controls how much data can be in transit. During Slow Start, cwnd begins at 1 MSS and doubles every RTT until it reaches the slow start threshold (ssthresh).",
+    "Once cwnd reaches ssthresh, TCP enters Congestion Avoidance where cwnd grows linearly by 1 MSS per RTT. When packet loss is detected by three duplicate ACKs, TCP performs Fast Retransmit: retransmitting the missing segment immediately and entering Fast Recovery. cwnd is set to ssthresh = cwnd/2.",
+    "Flow control prevents the sender from overwhelming the receiver's buffer. TCP implements this using the receive window (rwnd) field in the TCP header. The receiver advertises rwnd — the available buffer space. The sender ensures that unacknowledged data does not exceed min(cwnd, rwnd).",
+    "The sliding window protocol allows a sender to have multiple unacknowledged frames in transit simultaneously. The window size W determines how many frames can be sent before an acknowledgement is required. As acknowledgements arrive, the window slides forward, allowing new frames to be sent. This fills the network pipe and dramatically improves throughput over stop-and-wait protocols.",
+    "UDP (User Datagram Protocol) is a connectionless transport layer protocol. Unlike TCP, UDP provides no guarantees of delivery, ordering, or error correction. The UDP header is only 8 bytes: source port, destination port, length, and checksum. Applications that require low latency and can tolerate some loss — such as DNS, VoIP, and video streaming — use UDP.",
+    "TCP's three-way handshake establishes a connection: (1) Client sends SYN with initial sequence number x, (2) Server responds with SYN-ACK acknowledging x+1 and providing its initial sequence number y, (3) Client sends ACK acknowledging y+1. After the handshake, data transfer can begin. Connection teardown uses a four-way FIN exchange.",
+    "TCP Congestion Control Summary: Slow Start → exponential growth. Congestion Avoidance → linear growth. Fast Retransmit → 3 dup ACKs trigger immediate retransmission. Fast Recovery → cwnd = ssthresh, then linear growth. Timeout → ssthresh = cwnd/2, cwnd = 1 MSS, restart Slow Start.",
+    "Retransmission Timeout (RTO): TCP sets a timer for each segment sent. If an ACK is not received before the RTO expires, the segment is retransmitted. RTO is calculated using the Exponential Weighted Moving Average (EWMA) of the sample RTT. RTO = EstimatedRTT + 4 × DevRTT."
+  ],
+  "metadatas": [
+    {
+      "source_id": 1,
+      "source_name": "Computer Networks — Lecture 05",
+      "source_type": "video",
+      "page_number": "",
+      "slide_number": "",
+      "timestamp_start": 760.0,
+      "timestamp_end": 818.0
+    },
+    {
+      "source_id": 1,
+      "source_name": "Computer Networks — Lecture 05",
+      "source_type": "video",
+      "page_number": "",
+      "slide_number": "",
+      "timestamp_start": 818.0,
+      "timestamp_end": 895.0
+    },
+    {
+      "source_id": 1,
+      "source_name": "Computer Networks — Lecture 05",
+      "source_type": "video",
+      "page_number": "",
+      "slide_number": "",
+      "timestamp_start": 1120.0,
+      "timestamp_end": 1175.0
+    },
+    {
+      "source_id": 2,
+      "source_name": "Computer Networks Textbook",
+      "source_type": "pdf",
+      "page_number": 87,
+      "slide_number": "",
+      "timestamp_start": "",
+      "timestamp_end": ""
+    },
+    {
+      "source_id": 2,
+      "source_name": "Computer Networks Textbook",
+      "source_type": "pdf",
+      "page_number": 72,
+      "slide_number": "",
+      "timestamp_start": "",
+      "timestamp_end": ""
+    },
+    {
+      "source_id": 2,
+      "source_name": "Computer Networks Textbook",
+      "source_type": "pdf",
+      "page_number": 78,
+      "slide_number": "",
+      "timestamp_start": "",
+      "timestamp_end": ""
+    },
+    {
+      "source_id": 3,
+      "source_name": "Transport Layer Slides",
+      "source_type": "pptx",
+      "page_number": "",
+      "slide_number": 14,
+      "timestamp_start": "",
+      "timestamp_end": ""
+    },
+    {
+      "source_id": 3,
+      "source_name": "Transport Layer Slides",
+      "source_type": "pptx",
+      "page_number": "",
+      "slide_number": 11,
+      "timestamp_start": "",
+      "timestamp_end": ""
+    }
+  ]
+}

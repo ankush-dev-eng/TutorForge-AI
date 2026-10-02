@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────────────────────────
+# TutorForge AI — Backend Requirements
+# Python 3.12+ (tested on 3.14)
+# ─────────────────────────────────────────────────────────────────
+
+# Web framework
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+
+# Database (async SQLite)
+sqlalchemy[asyncio]>=2.0.0   # [asyncio] installs greenlet automatically
+aiosqlite>=0.20.0
+alembic>=1.13.0
+
+# API / forms
+python-multipart>=0.0.9
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# HTTP client (for tests and AI calls)
+httpx>=0.25.0
+python-dotenv>=1.0.0
+
+# ─────────────────────────────────────────────────────────────────
+# Document processing
+# ─────────────────────────────────────────────────────────────────
+# PDF          → pip install PyMuPDF
+# PowerPoint   → pip install python-pptx   (included below)
+# Word         → pip install python-docx   (included below)
+# Images       → pip install Pillow        (included below)
+
+python-pptx>=0.6.23
+python-docx>=1.1.0
+Pillow>=10.0.0
+
+# ─────────────────────────────────────────────────────────────────
+# Vector store  (LOCAL — no native compiled deps required)
+# ─────────────────────────────────────────────────────────────────
+# Default backend: LocalVectorStore (TF-IDF + cosine, stdlib only)
+# No extra install required.
+#
+# Optional Chroma backend:
+#   Set VECTOR_STORE_BACKEND=chroma in .env  AND  pip install chromadb
+#   NOTE: chromadb requires duckdb which may not build on Python 3.14.
+#         Do NOT add chromadb here as a mandatory requirement.
+
+# ─────────────────────────────────────────────────────────────────
+# AI providers  (install the one(s) you need)
+# ─────────────────────────────────────────────────────────────────
+# Google Gemini:  pip install google-generativeai
+# OpenAI:         pip install openai
+
+# ─────────────────────────────────────────────────────────────────
+# Embeddings  (optional — only if you want neural embeddings)
+# ─────────────────────────────────────────────────────────────────
+# Local sentence-transformers: pip install sentence-transformers
+# NOTE: requires torch; large download (~500MB). Falls back to
+#       TF-IDF LocalVectorStore when not installed.
+
+# ─────────────────────────────────────────────────────────────────
+# Audio / video transcription  (optional)
+# ─────────────────────────────────────────────────────────────────
+# pip install openai-whisper    (requires ffmpeg on PATH)
+# Without whisper, a demo fallback is used automatically.
+
+# ─────────────────────────────────────────────────────────────────
+# Utilities
+# ─────────────────────────────────────────────────────────────────
+numpy>=1.24.0
+
+# ─────────────────────────────────────────────────────────────────
+# Testing
+# ─────────────────────────────────────────────────────────────────
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
